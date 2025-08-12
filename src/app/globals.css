@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom base layer for early 2000s styling */
+@layer base {
+  body {
+    @apply font-sans text-xs bg-white text-black;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Times New Roman', Times, serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom component styles */
+@layer components {
+  /* Navigation buttons with early 2000s outset/inset styling */
+  .nav-button {
+    @apply text-white no-underline text-xs font-bold px-3 py-1 mx-0.5;
+    @apply bg-blue-600 text-center inline-block;
+    border: 1px outset #6495ed;
+  }
+  
+  .nav-button:hover {
+    @apply bg-blue-500;
+    border: 1px inset #6495ed;
+  }
+  
+  /* Vintage link styling */
+  .vintage-link {
+    @apply text-blue-800 underline;
+  }
+  
+  .vintage-link:visited {
+    @apply text-purple-800;
+  }
+  
+  .vintage-link:hover {
+    @apply text-red-600;
+  }
+  
+  /* Early 2000s form elements */
+  .vintage-input {
+    @apply text-xs border border-gray-400 p-0.5;
+    font-family: Verdana, Arial, sans-serif;
+    border-style: inset;
+  }
+  
+  .vintage-button {
+    @apply text-xs bg-gray-100 px-2 py-1 cursor-pointer;
+    font-family: Verdana, Arial, sans-serif;
+    border: 1px outset #cccccc;
+  }
+  
+  .vintage-button:active {
+    border: 1px inset #cccccc;
+  }
+  
+  /* Dotted separators */
+  .vintage-separator {
+    @apply border-0 border-t border-dotted border-gray-400 my-2.5;
+  }
+  
+  /* Highlight boxes in early 2000s colors */
+  .highlight-blue {
+    @apply bg-blue-200;
+  }
+  
+  .highlight-yellow {
+    @apply bg-yellow-100;
+  }
+  
+  .highlight-pink {
+    @apply bg-red-100;
+  }
+  
+  .highlight-green {
+    @apply bg-green-50;
+  }
+  
+  /* Early 2000s blockquote styling */
+  .vintage-quote {
+    @apply my-2.5 mx-5 p-1 bg-gray-50 italic border-l-4 border-gray-300;
+  }
+}
+
+/* Utility classes for vintage spacing and typography */
+@layer utilities {
+  /* Tight spacing characteristic of early 2000s */
+  .text-2000s {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  
+  .text-2000s-small {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+  
+  .text-2000s-large {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  /* Classic early web colors */
+  .bg-vintage-blue {
+    background-color: #4169e1;
+  }
+  
+  .bg-vintage-lightblue {
+    background-color: #6495ed;
+  }
+  
+  .bg-vintage-gray {
+    background-color: #f5f5f5;
+  }
+  
+  .text-vintage-red {
+    color: #8b0000;
+  }
+  
+  .text-vintage-blue {
+    color: #000080;
+  }
+  
+  .border-vintage-outset {
+    border-style: outset;
+    border-width: 1px;
+    border-color: #cccccc;
+  }
+  
+  .border-vintage-inset {
+    border-style: inset;
+    border-width: 1px;
+    border-color: #cccccc;
+  }
+}
+
+/* Early 2000s responsive design (very basic) */
+@media screen and (max-width: 600px) {
+  .nav-button {
+    @apply block my-0.5 text-center;
+  }
+}
+
+/* Print styles (very 2000s feature!) */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply text-black bg-white;
+    font-size: 10pt;
+  }
+  
+  .vintage-link {
+    @apply text-black no-underline;
+  }
 }
