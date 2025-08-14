@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-100 border-t-2 border-gray-300 p-4 mt-5 text-xs text-gray-800">
@@ -15,9 +17,9 @@ export default function Footer() {
         
         <div className="my-4">
           <h4 className="text-xs text-blue-800 font-bold mb-1">Get Connected</h4>
-          <a href="/contact" className="vintage-link mx-1">Contact Me</a> | 
-          <a href="/newsletter" className="vintage-link mx-1">Email Updates</a> | 
-          <a href="/guestbook" className="vintage-link mx-1">Sign My Guestbook</a>
+          <Link href="/contact" className="vintage-link mx-1">Contact Me</Link> |
+          <Link href="/newsletter" className="vintage-link mx-1">Email Updates</Link> | 
+          <Link href="/guestbook" className="vintage-link mx-1">Sign My Guestbook</Link>
         </div>
         
         <div className="text-center mt-4 pt-2.5 border-t border-dotted border-gray-300 text-gray-600 text-xs">

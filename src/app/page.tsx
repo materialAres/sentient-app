@@ -5,13 +5,11 @@ import Header from "@/components/layout/Header";
 
 export default function HomePage() {
   return (
-    <div className="max-w-4xl mx-auto bg-white">
-      <Header />
+    <div className="bg-white">
       <main className="p-2.5">
         <WelcomeSection />
         <BlogList />
       </main>
-      <Footer />
     </div>
   )
 }
