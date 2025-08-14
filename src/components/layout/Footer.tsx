@@ -7,9 +7,9 @@ export default function Footer() {
         </h3>
         <p className="mb-2.5 leading-snug">
           <span className="font-bold">Sarah Moonwhisper</span><br />
-          Wellness guide, meditation teacher, and gentle soul on a mission to help 
-          others find their inner light. Sarah has been practicing mindfulness for 
-          over a decade and believes that everyone deserves peace, joy, and 
+          A gentle soul on a mission to help 
+          others find their inner light. I've been practicing mindfulness for 
+          over a decade and believe that everyone deserves peace, joy, and 
           self-compassion in their daily lives.
         </p>
         
@@ -21,7 +21,7 @@ export default function Footer() {
         </div>
         
         <div className="text-center mt-4 pt-2.5 border-t border-dotted border-gray-300 text-gray-600 text-xs">
-          <p>© 2004 Shine.com - Spreading light since 200X</p>
+          <p>© Shine.com - Spreading light since 200X</p>
         </div>
       </div>
     </footer>
