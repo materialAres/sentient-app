@@ -8,9 +8,10 @@ import { notFound } from 'next/navigation'
 export async function generateMetadata({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const post = blogPosts.find(post => post.slug === params.slug)
+  const {slug} = await params;
+  const post = blogPosts.find(post => post.slug === slug)
   
   if (!post) {
     return {
@@ -31,15 +32,16 @@ export function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ 
+export default async function BlogPostPage({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }) {
-  const post = blogPosts.find(post => post.slug === params.slug)
+  const { slug } = await params;
+  const post = blogPosts.find(post => post.slug === slug);
   
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return <BlogArticle post={post} />
